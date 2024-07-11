@@ -24,3 +24,4 @@ export function Box(props) {
     </mesh>
   );
 }
+
