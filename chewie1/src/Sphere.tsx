@@ -7,7 +7,7 @@ export function Sphere(props) {
   // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
-  // Subscribe this component to the rotation update loop
+  // Subscribe this component to the simple bouncing physics loop
   useFrame((state, delta) => {
     meshRef.current.rotation.y += delta * (active ? 2 : 1);
   });
