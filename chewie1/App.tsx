@@ -9,7 +9,7 @@ export default function Scene() {
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
       <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
       <Box position={[-1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="red" />
-      <Box position={[1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="red" />
+      <Box position={[1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="purple" />
       <Sphere />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0,-1.0,0]}>
         <planeGeometry args={[100, 100]} />
