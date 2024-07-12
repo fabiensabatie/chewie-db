@@ -35,6 +35,6 @@ const Bee = (props: JSX.IntrinsicElements["group"]) => {
   );
 };
 
-useGLTF.preload("/src/Bee.glb");
+useGLTF.preload("Bee.glb");
 
 export default Bee;
