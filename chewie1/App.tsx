@@ -4,7 +4,7 @@ import { OrbitControls } from "@react-three/drei";
 import { Box } from "./src/Box";
 import { Sphere } from "./src/Sphere";
 import { Torus } from "./src/Torus";
-import { Bee } from "./src/Bee";
+import Bee from "./src/Bee";
 
 export default function Scene() {
   return (
