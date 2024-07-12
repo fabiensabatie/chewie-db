@@ -1,20 +1,16 @@
-import React from 'react';
-import { MeshProps, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Box } from "./src/Box";
+import { Sphere } from "./src/Sphere";
 
-interface PlaneProps extends MeshProps {
-  color: string;
-}
-
-export const Plane: React.FC<PlaneProps> = ({ color, ...props }) => {
+export default function Scene() {
   return (
-    <mesh rotation={[-Math.PI / 2, 0, 0]}
-      {...props}
-      onClick={(event) => {
-        window.Chewie.onComponentClicked('/src/Plane.tsx');
-      }}
-    >
-      <planeGeometry args={[5, 5]} />
-      <meshStandardMaterial color={color} />
-    </mesh>
+    <Canvas>
+      <ambientLight intensity={Math.PI / 2} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+      <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+      <Box position={[-1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="red" />
+      <Box position={[1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="purple" />
+      <Sphere />
+    </Canvas>
   );
-};
+}
