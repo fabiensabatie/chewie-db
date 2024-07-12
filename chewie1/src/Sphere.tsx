@@ -15,7 +15,7 @@ export function Sphere(props) {
   return (
     <mesh {...props}
       ref={meshRef}
-      scale={active ? 1 2: 1}
+      scale={active ? 1.2: 1}
       onClick={(event) => {
         setActive(!active);
         window.Chewie.onComponentClicked("/src/Sphere.tsx");
