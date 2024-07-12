@@ -1,6 +1,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Box } from "./src/Box";
 const coco = "salut";
+
 export default function Scene() {
   return (
     <Canvas>
