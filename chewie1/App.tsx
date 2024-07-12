@@ -1,7 +1,6 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Box } from "./src/Box";
 import { Sphere } from "./src/Sphere";
-import { Floor } from "./src/Floor";
 
 export default function Scene() {
   return (
@@ -12,7 +11,6 @@ export default function Scene() {
       <Box position={[-1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="red" />
       <Box position={[1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="purple" />
       <Sphere />
-      <Floor />
     </Canvas>
   );
 }
