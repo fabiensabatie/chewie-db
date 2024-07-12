@@ -10,7 +10,7 @@ export function Sphere(props) {
   // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((state, delta) => {
     meshRef.current.rotation.y += delta * (active ? 2 : 1);
-    meshRef.current.position.y = Math.abs(Math.sin(state.clock.elapsedTime * (active ? 2 : 1))) * 2;
+    meshRef.current.position.y = Math.abs(Math.sin(state.clock.elapsedTime * (active ? 3 : 2))) * 2;
   });
   // Return view, these are regular three.js elements expressed in JSX
   return (
