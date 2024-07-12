@@ -12,6 +12,16 @@ export function Sphere(props) {
   const velocity = useRef(0.1);
   useFrame((state, delta) => {
     meshRef.current.rotation.y += delta * (active ? 2 : 1);
+    // Bounce mechanics: Update the position based on velocity
+    velocity.current += gravity * delta; // updating velocity with gravity
+    meshRef.current.position.y += velocity.current * delta; // updating position with velocity
+    // Bounce off the floor
+    if (meshRef.current.position.y <= 0) {
+      // Reset position to 0 (floor level)
+      meshUITextField.current.position.y = 0;
+      // Reverse velocity for bounce with dampening effect
+      velocity.current = -velocity.current * 0.85;
+    }
   });
   // Return the 3D Sphere
   return (
