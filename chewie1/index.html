@@ -9,7 +9,7 @@
     // Chewie's editor API, removing this line will break the editor 💩
     window.Chewie = {
       onComponentClicked: (c) => {
-        document.querySelector("#selectedComponent").i;
+        document.querySelector("#selectedComponent").;
         window.parent.postMessage(["setActiveFile", c], '*');
       }
     };
