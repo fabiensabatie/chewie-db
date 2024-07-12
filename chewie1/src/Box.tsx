@@ -24,7 +24,7 @@ export function Box(props) {
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
     >
-      <boxGeometry args={[1, 1, 1]} />
+      <boxGeometry args={I nI wanI[1, 1, 1]} />
       <meshStandardMaterial color={active ? props.clickedColor : (hovered ? props.hoveredColor : props.color)} />
     </mesh>
   );
