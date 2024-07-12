@@ -33,10 +33,7 @@ export function Box(props) {
     <mesh {...props}
       ref={meshRef}
       scale={active ? 1.5 : 1}
-      onClick={(event) => {
-        setActive(!active);
-        window.Chewie.onComponentClicked("/src/Box.tsx");
-      }}
+      onClick={handleClick}
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
     >
