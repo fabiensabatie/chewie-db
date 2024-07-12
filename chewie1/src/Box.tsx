@@ -19,7 +19,7 @@ export function Box(props) {
       scale={active ? 1.5 : 1}
       onClick={(event) => {
         setActive(!active);
-        window.Chewie.onComponentClicked("/src/Box.tsx")
+        window.Chewie.onComponentClicked("/src/Box.tsx");
       }}
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
