@@ -11,6 +11,10 @@ export default function Scene() {
       <Box position={[-1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="red" />
       <Box position={[1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="red" />
       <Sphere position={[0, 0, 0]} color="skyblue" hoveredColor="lightblue" clickedColor="deepskyblue" />
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0,-0.5,0]}>
+        <planeGeometry args={[100, 100]} />
+        <meshStandardMaterial color={'dimgray'} />
+      </mesh>
     </Canvas>
   );
 }
