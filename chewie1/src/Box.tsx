@@ -15,7 +15,7 @@ export function Box(props) {
   
   // Return view, these are regular three.js elements expressed in JSX
   return (
-    <mesh {...props}
+    <mesh onPointerOver={handlePointerOver} onPointerOut={handlePointerOut} {...props}
       ref={meshRef}
       scale={active ? 1.5 : 1}
       onClick={(event) => {
