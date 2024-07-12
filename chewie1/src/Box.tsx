@@ -12,28 +12,16 @@ export function Box(props) {
   useFrame((state, delta) => {
   meshRef.current.rotation.x += delta * (active ? 2 : 1);
 });
-
-   const handleClick = () => {
-    setActive(!active);
-    
-    // Create an error to capture the stack trace
-    const error = new Error();
-    const stack = error.stack;
-    
-    // Extract the file path and component name from the stack trace
-    const match = stack.match(/at\s+(?:.+\s\()?(.*\/([^\/]+\.tsx))/);
-    const path = match ? match[1] : "Unknown Path";
-    const componentName = "Box"; // You can make this dynamic if needed
-
-    // Call the function with the extracted path and component name
-    window.Chewie.onComponentClicked(path, componentName);
-  };
+  
   // Return view, these are regular three.js elements expressed in JSX
   return (
     <mesh {...props}
       ref={meshRef}
       scale={active ? 1.5 : 1}
-      onClick={handleClick}
+      onClick={(event) => {
+        setActive(!active);
+        window.Chewie.onComponentClicked("/src/Box.tsx");
+      }}
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
     >
