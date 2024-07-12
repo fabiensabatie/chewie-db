@@ -8,6 +8,8 @@ export function Sphere(props) {
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
   // Subscribe this component to the simple bouncing physics loop
+  const gravity = -9.81;
+  const velocity = useRef(0.1);
   useFrame((state, delta) => {
     meshRef.current.rotation.y += delta * (active ? 2 : 1);
   });
