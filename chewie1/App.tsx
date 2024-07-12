@@ -11,7 +11,9 @@ export default function Scene() {
       <Box position={[-1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="red" />
       <Box position={[1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="purple" />
       <Sphere />
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0,-1.0,0]}>
+      <mesh  onClick={(event) => {
+        window.Chewie.onComponentClicked("/src/App.tsx");
+      }} rotation={[-Math.PI / 2, 0, 0]} position={[0,-1.0,0]}>
         <planeGeometry args={[100, 100]} />
         <meshStandardMaterial color={'dimgray'} />
       </mesh>
