@@ -8,7 +8,9 @@
   <script>
     // Chewie's editor API, removing this line will break the editor 💩
     window.🐶 = {
-      onComponentClicked
+      onComponentClicked: () => {
+        console.log(compon)
+      }
     };
     
     window.onerror = console.error;
