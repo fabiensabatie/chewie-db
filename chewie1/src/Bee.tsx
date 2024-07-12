@@ -35,6 +35,6 @@ const Bee = (props: JSX.IntrinsicElements["group"]) => {
   );
 };
 
-useGLTF.preload("/src/Bee.glb");
+useGLTF.preload("https://raw.githubusercontent.com/fabiensabatie/chewie-db/main/chewie1/src/Bee.glb");
 
 export default Bee;
