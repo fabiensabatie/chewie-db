@@ -1,6 +1,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Box } from "./src/Box";
 import { Sphere } from "./src/Sphere";
+import { BouncingSphere } from "./src/BouncingSphere";
 
 export default function Scene() {
   return (
