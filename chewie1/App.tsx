@@ -11,6 +11,7 @@ export default function Scene() {
       <Box position={[-1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="red" />
       <Box position={[1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="purple" />
       <Sphere />
+      <Plane color='lightblue' position={[0, 0, 0]} />
     </Canvas>
   );
 }
