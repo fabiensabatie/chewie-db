@@ -8,7 +8,7 @@
   <script>
     // Chewie's editor API, removing this line will break the editor 💩
     window.Chewie = {
-      onComponentClicked: (c, n) => window.parent.postMessage(["setActiveFile", c], '*')
+      onComponentClicked: (c, n) => window.parent.postMessage(["setActiveFile", c, n], '*')
     };
     window.onerror = console.error;
   </script>
