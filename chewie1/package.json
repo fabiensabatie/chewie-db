@@ -10,7 +10,7 @@
     "three": "latest",
     "@types/three": "latest",
     "@react-three/fiber": "latest",
-      "@react-three/postprocessing", "lastest"
+    "@react-three/postprocessing": "lastest"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
