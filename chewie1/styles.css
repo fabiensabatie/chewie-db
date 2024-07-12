@@ -8,7 +8,7 @@ body {
   font-smooth: always;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-  
+  margin: 0px;
 }
 
 h1 {
