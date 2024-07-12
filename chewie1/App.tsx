@@ -10,6 +10,7 @@ export default function Scene() {
       <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
       <Box position={[-1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="red" />
       <Box position={[1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="red" />
+      <Sphere position={[0, 0, 0]} color="skyblue" hoveredColor="lightblue" clickedColor="deepskyblue" />
     </Canvas>
   );
 }
