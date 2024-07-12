@@ -1,6 +1,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Box } from "./src/Box";
 import { Sphere } from "./src/Sphere";
+import { Floor } from "./src/Floor";
 
 export default function Scene() {
   return (
