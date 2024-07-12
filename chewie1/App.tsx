@@ -4,12 +4,10 @@ import { OrbitControls } from "@react-three/drei";
 import { Box } from "./src/Box";
 import { Sphere } from "./src/Sphere";
 import { Torus } from "./src/Torus";
-import Menu from "./src/Menu";
 
 export default function Scene() {
   return (
     <div>
-      <Menu />
       <Canvas>
         <ambientLight intensity={Math.PI / 2} />
         <spotLight
