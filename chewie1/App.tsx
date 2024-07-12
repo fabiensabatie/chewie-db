@@ -16,5 +16,6 @@ export default function Scene() {
         <meshStandardMaterial color={'dimgray'} />
       </mesh>
     </Canvas>
+    
   );
 }
