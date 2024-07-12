@@ -8,9 +8,9 @@ export default function Scene() {
       <ambientLight intensity={Math.PI / 2} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
       <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-      <Sphere />
-      <Box position={[-1.2, -2, 0]} color="orange" hoveredColor="yellow" clickedColor="red" />
+      <Box position={[0, -2, 0]} color="orange" hoveredColor="yellow" clickedColor="red" />
       <Box position={[1.2, -2, 0]} color="orange" hoveredColor="yellow" clickedColor="purple" />
+      <Sphere />
     </Canvas>
   );
 }
