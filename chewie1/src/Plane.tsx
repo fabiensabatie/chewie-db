@@ -7,7 +7,7 @@ interface PlaneProps extends MeshProps {
 
 export const Plane: React.FC<PlaneProps> = ({ color, ...props }) => {
   return (
-    <mesh
+    <mesh rotation={[-Math.PI / 2, 0, 0]}
       {...props}
       onClick={(event) => {
         window.Chewie.onComponentClicked('/src/Plane.tsx');
