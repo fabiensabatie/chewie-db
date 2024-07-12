@@ -23,7 +23,7 @@ export function Sphere(props) {
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
     >
-      <sphereGeometry args={[1, 16, 32]} />
+      <sphereGeometry args={[1, 16, 16]} />
       <meshStandardMaterial color={active ? props.clickedColor : (hovered ? props.hoveredColor : props.color)} />
     </mesh>
   );
