@@ -17,11 +17,3 @@ h1 {
 canvas {
   height: calc(100vh - 20px) !important;
 }
-
-#selectedComponent {
-  position: absolute;
-  top: 10px;
-  color: gray;
-  background: white;
-  opacity: 70%;
-}
