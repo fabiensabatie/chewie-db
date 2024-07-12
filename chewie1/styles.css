@@ -19,5 +19,6 @@ canvas {
 }
 
 #selectedComponent {
-  
+  position: absolute;
+  top: 10px;
 }
