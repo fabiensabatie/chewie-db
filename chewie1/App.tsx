@@ -1,4 +1,5 @@
 import { Canvas, useFrame } from "@react-three/fiber";
+import { Sphere } from "./src/Sphere";
 import { Box } from "./src/Box";
 
 export default function Scene() {
