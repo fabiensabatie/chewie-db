@@ -1,5 +1,14 @@
-export default function App() {
-  const data: string = "world"
-
-  return <h1>Hello {data}</h1>
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Box } from "./src/Box";
+export default function Scene() {
+  return (
+    <Canvas>
+      <orbitControls />
+      <ambientLight intensity={Math.PI / 2} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+      <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+      <Box position={[-1.2, 0, 0]} />
+      <Box position={[1.2, 0, 0]} />
+    </Canvas>
+  );
 }
