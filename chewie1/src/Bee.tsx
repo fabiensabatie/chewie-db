@@ -10,7 +10,7 @@ interface GLTFResult extends GLTF {
 
 const Bee = (props: JSX.IntrinsicElements["group"]) => {
   const group = useRef<any>();
-  const { nodes, materials, animations } = useGLTF("/src/ee.glb") as GLTFResult;
+  const { nodes, materials, animations } = useGLTF("/src/Bee.glb") as GLTFResult;
   const { actions } = useAnimations(animations, group);
 
   useFrame((state, delta) => {
