@@ -1,27 +1,21 @@
-import React, { useRef, useState } from "react";
-import { useFrame } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Box } from "./src/Box";
+import { Sphere } from "./src/Sphere";
+import { BouncingSphere } from "./src/BouncingSphere";
 
-export function BouncingSphere() {
-  const meshRef = useRef();
-  const [position, setPosition] = useState([0, 0, 0]);
-  const [velocity, setVelocity] = useState(0.1);
-
-  useFrame(() => {
-    if (position[1] < -0.5 && velocity < 0) {
-      setVelocity(-velocity * 0.95); // Reverse and dampen the velocity
-    }
-    setPosition(prevPosition => [prevPosition[0], prevPosition[1] + velocity, prevPosition[2]]);
-    setVelocity(velocity - 0.01); // Gravity effect
-  });
-
+export default function Scene() {
   return (
-    <mesh
-      ref={meshRef}
-      position={position}
-      onClick={() => { setVelocity(0.2); }} // On click increase bounce
-    >
-      <sphereGeometry args={[1, 64, 64]} />
-      <meshStandardMaterial color={'skyblue'} />
-    </mesh>
+    <Canvas>
+      <ambientLight intensity={Math.PI / 2} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+      <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+      <Box position={[-1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="red" />
+      <Box position={[1.2, 0, 0]} color="orange" hoveredColor="yellow" clickedColor="red" />
+      <BouncingSphere />
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0,-1.0,0]}>
+        <planeGeometry args={[100, 100]} />
+        <meshStandardMaterial color={'dimgray'} />
+      </mesh>
+    </Canvas>
   );
 }
