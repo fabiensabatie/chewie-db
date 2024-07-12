@@ -27,4 +27,4 @@ export function Sphere(props) {
       <meshStandardMaterial color={active ? props.clickedColor : (hovered ? props.hoveredColor : props.color)} />
     </mesh>
   );
-}Make the ball bounce
+}
