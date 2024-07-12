@@ -33,7 +33,7 @@ export default function Scene() {
         />
         <Sphere />
         <Bee></Bee>
-</Bee>        <Torus position={[-1.2, -2, 0]} color="blue" hoveredColor="lightblue" clickedColor="darkblue" />
+     <Torus position={[-1.2, -2, 0]} color="blue" hoveredColor="lightblue" clickedColor="darkblue" />
         <OrbitControls />
       </Canvas>
     </div>
