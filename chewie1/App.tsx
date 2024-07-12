@@ -13,4 +13,4 @@ export default function Scene() {
       <Sphere />
     </Canvas>
   );
-}Add
+}
