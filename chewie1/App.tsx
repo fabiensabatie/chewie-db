@@ -1,4 +1,6 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 import { Box } from "./src/Box";
 import { Sphere } from "./src/Sphere";
 import { Torus } from "./src/Torus";
@@ -29,6 +31,7 @@ export default function Scene() {
       />
       <Sphere />
       <Torus position={[-1.2, -2, 0]} color="blue" hoveredColor="lightblue" clickedColor="darkblue" />
+      <OrbitControls />
     </Canvas>
   );
 }
