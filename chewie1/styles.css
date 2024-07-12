@@ -22,5 +22,6 @@ canvas {
   position: absolute;
   top: 10px;
   color: gray;
+  background: white;
   opacity: 70%;
 }
