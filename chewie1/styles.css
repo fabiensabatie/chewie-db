@@ -17,3 +17,7 @@ h1 {
 canvas {
   height: calc(100vh - 20px) !important;
 }
+
+#selectedComponent {
+  
+}
