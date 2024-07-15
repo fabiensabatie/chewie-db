@@ -18,9 +18,7 @@ function Bullet({ position, direction }) {
   );
 }
 
-export default function Scene() {
-  const [bullets, setBullets] = useState([]);
-  const intervalRef = useRef();
+function SceneContent({ bullets, setBullets, intervalRef }) {
   const { camera } = useThree();
 
   const startShooting = (event) => {
@@ -38,15 +36,27 @@ export default function Scene() {
   };
 
   return (
-    <div onMouseDown={startShooting} onMouseUp={stopShooting} onMouseLeave={stopShooting} style={{ width: '100vw', height: '100vh' }}>
+    <>
+      <ambientLight intensity={Math.PI / 2} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+      <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+      {bullets.map((bullet, index) => (
+        <Bullet key={index} position={bullet.position} direction={bullet.direction} />
+      ))}
+      <OrbitControls />
+      <div onMouseDown={startShooting} onMouseUp={stopShooting} onMouseLeave={stopShooting} style={{ width: '100%', height: '100%', position: 'absolute', top: 0 }} />
+    </>
+  );
+}
+
+export default function Scene() {
+  const [bullets, setBullets] = useState([]);
+  const intervalRef = useRef();
+
+  return (
+    <div style={{ width: '100vw', height: '100vh', position: 'relative' }}>
       <Canvas>
-        <ambientLight intensity={Math.PI / 2} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
-        <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-        {bullets.map((bullet, index) => (
-          <Bullet key={index} position={bullet.position} direction={bullet.direction} />
-        ))}
-        <OrbitControls />
+        <SceneContent bullets={bullets} setBullets={setBullets} intervalRef={intervalRef} />
       </Canvas>
     </div>
   );
