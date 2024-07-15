@@ -1,22 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import * as THREE from 'three';
-
-function Bullet({ position, direction }) {
-  const ref = useRef();
-  useFrame(() => {
-    ref.current.position.x += direction.x * 0.1;
-    ref.current.position.y += direction.y * 0.1;
-    ref.current.position.z += direction.z * 0.1;
-  });
-  return (
-    <mesh ref={ref} position={position}>
-      <sphereGeometry args={[0.1, 32, 32]} />
-      <meshStandardMaterial color="yellow" />
-    </mesh>
-  );
-}
+import * as
 
 function SceneContent({ bullets, setBullets, intervalRef }) {
   const { camera } = useThree();
