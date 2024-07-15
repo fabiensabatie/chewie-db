@@ -28,7 +28,7 @@ export default function Scene() {
     const y = -(clientY / window.innerHeight) * 2 + 1;
     const direction = new THREE.Vector3(x, y, -1).normalize();
     intervalRef.current = setInterval(() => {
-      setBullets((bullets) => [...bullets, { position: [0, 0, 0], direction }]);
+      setBullets((bullets) => [...bullets, { position: [0, 0, 0], directionMake the direc }]);
     }, 100);
   };
 
