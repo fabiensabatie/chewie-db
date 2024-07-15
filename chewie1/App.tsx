@@ -22,13 +22,7 @@ function SceneContent({ bullets, setBullets, intervalRef }) {
 
   return (
     <>
-      <ambientLight intensity={Math.PI / 2} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
-      <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-      {bullets.map((bullet, index) => (
-        <Bullet key={index} position={bullet.position} direction={bullet.direction} />
-      ))}
-      <OrbitControls />
+     
       <div onMouseDown={startShooting} onMouseUp={stopShooting} onMouseLeave={stopShooting} style={{ width: '100%', height: '100%', position: 'absolute', top: 0 }} />
     </>
   );
