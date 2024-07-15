@@ -4,6 +4,7 @@ import { OrbitControls } from "@react-three/drei";
 import { Box } from "./src/Box";
 import { Sphere } from "./src/Sphere";
 import { Torus } from "./src/Torus";
+import { Menu } from './src/Menu';
 
 export default function Scene() {
   return (
@@ -18,6 +19,7 @@ export default function Scene() {
         <Torus position={[0, -2, 0]} color="blue" hoveredColor="lightblue" clickedColor="darkblue" />
         <OrbitControls />
       </Canvas>
+      <Menu />
     </div>
   );
 }
