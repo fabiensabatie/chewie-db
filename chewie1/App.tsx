@@ -24,7 +24,9 @@ export default function Scene() {
   const [bullets, setBullets] = useState([]);
 
   const handleClick = (event) => {
-    const { x, y } = event.point;
+    const { clientX, clientY } = event;
+    const x = (clientX / window.innerWidth) * 2 - 1;
+    const y = -(clientY / window.innerHeight) * 2 + 1;
     const direction = new THREE.Vector3(x, y, -1).normalize();
     setBullets([...bullets, { position: [0, 0, 0], direction }]);
   };
