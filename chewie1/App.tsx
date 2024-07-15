@@ -1,36 +1,46 @@
 import React, { useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Box } from "./src/Box";
 import { Sphere } from "./src/Sphere";
-import { Torus } from "./src/Torus";
 import { Menu } from './src/Menu';
+import * as THREE from 'three';
+
+function Bullet({ position, direction }) {
+  const ref = React.useRef();
+  useFrame(() => {
+    ref.current.position.x += direction.x * 0.1;
+    ref.current.position.y += direction.y * 0.1;
+    ref.current.position.z += direction.z * 0.1;
+  });
+  return (
+    <mesh ref={ref} position={position}>
+      <sphereGeometry args={[0.1, 32, 32]} />
+      <meshStandardMaterial color="yellow" />
+    </mesh>
+  );
+}
 
 export default function Scene() {
-  const [elements, setElements] = useState([
-    { type: 'Box', props: { position: [-1.2, -2, 0], color: 'green', hoveredColor: 'yellow', clickedColor: 'red' } },
-    { type: 'Box', props: { position: [1.2, -2, 0], color: 'green', hoveredColor: 'yellow', clickedColor: 'green' } },
-    { type: 'Torus', props: { position: [0, -2, 0], color: 'blue', hoveredColor: 'lightblue', clickedColor: 'darkblue' } }
-  ]);
+  const [bullets, setBullets] = useState([]);
 
-  const addElement = (type) => {
-    const position = (type === 'Box') ? [Math.random() * 4 - 2, Math.random() * 4 - 2, 0] : [0, Math.random() * 4 - 2, 0];
-    setElements([...elements, { type, props: { position, color: 'white', hoveredColor: 'grey', clickedColor: 'black' } }]);
+  const handleClick = (event) => {
+    const { x, y } = event.point;
+    const direction = new THREE.Vector3(x, y, -1).normalize();
+    setBullets([...bullets, { position: [0, 0, 0], direction }]);
   };
 
   return (
-    <div>
+    <div onClick={handleClick} style={{ width: '100vw', height: '100vh' }}>
       <Canvas>
         <ambientLight intensity={Math.PI / 2} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
         <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-        {elements.map((element, index) => {
-          const Element = element.type === 'Box' ? Box : element.type === 'Sphere' ? Sphere : Torus;
-          return <Element key={index} {...element.props} />;
-        })}
+        {bullets.map((bullet, index) => (
+          <Bullet key={index} position={bullet.position} direction={bullet.direction} />
+        ))}
         <OrbitControls />
       </Canvas>
-      <Menu addElement={addElement} />
+      <Menu addElement={() => {}} />
     </div>
   );
 }
