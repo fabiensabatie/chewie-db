@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Menu } from './src/Menu';
 import * as THREE from 'three';
 
 function Bullet({ position, direction }) {
@@ -48,7 +47,6 @@ export default function Scene() {
         ))}
         <OrbitControls />
       </Canvas>
-      <Menu addElement={() => {}} />
     </div>
   );
 }
