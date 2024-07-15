@@ -42,7 +42,6 @@ export default function Scene() {
         ))}
         <OrbitControls />
       </Canvas>
-      <Menu addElement={() => {}} />
     </div>
   );
 }
