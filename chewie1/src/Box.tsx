@@ -2,4 +2,4 @@ import React from "react"; import { Mesh } from "@react-three/fiber"; import { B
 
 interface BoxProps { position: number[]; }
 
-export default function Box({ position }: BoxProps) { return ( <Mesh> <BoxBufferGeometry /> <MeshStandardMaterial color="red" /> </Mesh> ); }
+export default function Box({ position }: BoxProps) { return ( <Mesh> <BoxBufferGeometry /> <MeshStandardMaterial color="pruple" /> </Mesh> ); }
