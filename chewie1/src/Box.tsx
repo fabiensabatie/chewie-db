@@ -1,13 +1,5 @@
-import React from 'react';
-import { useFrame } from '@react-three/fiber';
+import React from "react"; import { Mesh } from "@react-three/fiber"; import { BoxBufferGeometry, MeshStandardMaterial } from "three";
 
-const Box = (props) => {
-  return (
-    <mesh {...props} onClick={(event) => {window.Chewie.onComponentClicked("/src/Box.tsx");}}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={'red'} />
-    </mesh>
-  );
-};
+interface BoxProps { position: number[]; }
 
-export { Box };
+export default function Box({ position }: BoxProps) { return ( <Mesh> <BoxBufferGeometry /> <MeshStandardMaterial color="red" /> </Mesh> ); }
