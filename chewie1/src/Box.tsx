@@ -24,7 +24,6 @@ export function Box(props) {
         setActive(!active);
         setColor('green'); // Set color to green when clicked
         window.Chewie.onComponentClicked("/src/Box.tsx");
-        
       }}
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
