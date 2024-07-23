@@ -63,7 +63,7 @@ export function Sphere(props) {
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
     >
-      <boxGeometry args={[1, 32, 32]} />
+      <boxGeometry args={[16, 16]} />
       <meshStandardMaterial color={hovered ? "purple" : color} />
     </mesh>
   );
