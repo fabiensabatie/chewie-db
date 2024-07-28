@@ -33,3 +33,5 @@ export function Box(props) {
     </mesh>
   );
 }
+
+color: pink
