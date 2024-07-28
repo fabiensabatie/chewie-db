@@ -15,7 +15,7 @@ export function Box(props) {
     meshRef.current.rotation.y += delta * (active ? 2 : 1);
     meshRef.current.position.y = Math.abs(Math.sin(state.clock.elapsedTime * (active ? 3 : 2))) * 2;
   });
-  // Return view, these are regular three.js elements expressed in JSX
+const [color, setColor] = useState('pink');
   return (
     <mesh {...props}
       ref={meshRef}
