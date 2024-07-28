@@ -15,6 +15,8 @@ export function Box(props) {
     meshRef.current.rotation.y += delta * (active ? 2 : 1);
     meshRef.current.position.y = Math.abs(Math.sin(state.clock.elapsedTime * (active ? 3 : 2))) * 2;
   });
+
+  return (
     <mesh {...props}
       ref={meshRef}
       scale={active ? 1.5 : 1}
