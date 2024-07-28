@@ -33,6 +33,3 @@ export function Box(props) {
     </mesh>
   );
 }
-
-color: pink
-const [color, setColor] = useState('pink');
