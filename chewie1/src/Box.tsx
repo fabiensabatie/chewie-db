@@ -8,7 +8,7 @@ export function Box(props) {
   // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
-  const [color, setColor] = useState(',pink');
+  const [color, setColor] = useState('pink');
   
   // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((state, delta) => {
