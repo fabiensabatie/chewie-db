@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+
+
 
 export function Box(props) {
   // This reference will give us direct access to the mesh
@@ -35,3 +35,5 @@ export function Box(props) {
 }
 
 color: pink
+import React, { useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber"
