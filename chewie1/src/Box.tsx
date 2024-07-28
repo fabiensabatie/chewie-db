@@ -1,5 +1,5 @@
 
-import React, { useRef, useState } from "react";
+import { Box } from ".\.PinkBox"
 import { Canvas, useFrame } from "@react-three/fiber";
 
 
