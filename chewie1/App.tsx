@@ -7,7 +7,7 @@ export default function Scene() {
   return (
     <div style={{ width: '100vw', height: '100vh', position: 'relative' }}>
       <Canvas>
-        <Box position={[-5,-2,6]} rotation={[Math.PI/4, 0, Math.PI]} scale={[1.2, 1.2, 1.2]}/>
+        <Box position={[-5,-2,6]} />
      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
         <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
         <OrbitControls />
