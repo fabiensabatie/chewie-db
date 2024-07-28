@@ -33,7 +33,3 @@ export function Box(props) {
     </mesh>
   );
 }
-
-color: pink
-import React, { useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber"
