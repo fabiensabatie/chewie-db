@@ -23,7 +23,6 @@ export function Box(props) {
 const [color, setColor] = useState('pink');
         window.Chewie.onComponentClicked("/src/Box.tsx");
       }}
-      onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
     >
       <boxGeometry args={[1, 1]} />
