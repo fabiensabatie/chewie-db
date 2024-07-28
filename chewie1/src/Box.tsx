@@ -22,7 +22,7 @@ export function Box(props) {
       ref={meshRef}
       scale={active ? 1.5 : 1}
       onClick={(event) => {
-        setColor('green'); // Set color to green when clicked
+const [color, setColor] = useState('pink');
         window.Chewie.onComponentClicked("/src/Box.tsx");
       }}
       onPointerOver={(event) => setHover(true)}
