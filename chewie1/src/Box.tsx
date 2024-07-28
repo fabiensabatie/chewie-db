@@ -35,3 +35,4 @@ export function Box(props) {
 }
 
 color: pink
+const [color, setColor] = useState('pink');
